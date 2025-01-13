@@ -1,7 +1,3 @@
-Here’s an explanation of **Inheritance and Its Types in C++** in a clear and engaging way, rephrased to match the style of a senior CS instructor like Rahat Khan Pathan:
-
----
-
 ### **Understanding Inheritance in C++**
 
 Inheritance is one of the **core pillars of Object-Oriented Programming (OOP)**. It allows us to **reuse and extend existing classes** to save time and effort in software development.
