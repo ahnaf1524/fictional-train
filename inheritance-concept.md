@@ -162,42 +162,55 @@ Imagine you're building a system for managing employees in a company. Some attri
    - **Definition**: A combination of multiple and multilevel inheritance.
    - **Example**:
      ```cpp
-     class Animal {
-     public:
-         void eat() {
-             cout << "Animals eat food." << endl;
-         }
-     };
+     #include <iostream>
+     using namespace std;
 
-     class Mammal : public Animal {
+      class Animal
+      {
      public:
-         void walk() {
-             cout << "Mammals walk on land." << endl;
-         }
-     };
+        void eat()
+        {      
+        cout << "Animals eat food." << endl;
+        }
+      };
 
-     class Bird : public Animal {
-     public:
-         void fly() {
-             cout << "Birds fly in the sky." << endl;
-         }
-     };
+     class Mammal : virtual public Animal
+      {
+      public:
+       void walk()
+       {
+        cout << "Mammals walk on land." << endl;
+       }
+};
 
-     class Bat : public Mammal, public Bird {
-     public:
-         void hangUpsideDown() {
-             cout << "The bat hangs upside down." << endl;
-         }
-     };
+      class Bird : virtual public Animal
+      {
+      public:
+          void fly()
+          {
+              cout << "Birds fly in the sky." << endl;
+          }
+      };
+      
+      class Bat : public Mammal, public Bird
+      {
+      public:
+          void hangUpsideDown()
+          {
+              cout << "The bat hangs upside down." << endl;
+          }
+      };
+      
+      int main()
+      {
+          Bat b;
+          b.eat(); // No ambiguity due to virtual inheritance
+          b.walk();
+          b.fly();
+          b.hangUpsideDown();
+          return 0;
+      }
 
-     int main() {
-         Bat b;
-         b.eat();
-         b.walk();
-         b.fly();
-         b.hangUpsideDown();
-         return 0;
-     }
      ```
 
 ---
