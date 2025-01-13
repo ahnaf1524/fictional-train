@@ -157,7 +157,6 @@ Imagine you're building a system for managing employees in a company. Some attri
          return 0;
      }
      ```
-
 #### 5. **Hybrid Inheritance**
    - **Definition**: A combination of multiple and multilevel inheritance.
    - **Example**:
@@ -165,53 +164,44 @@ Imagine you're building a system for managing employees in a company. Some attri
      #include <iostream>
      using namespace std;
 
-      class Animal
-      {
+     class Animal {
      public:
-        void eat()
-        {      
-        cout << "Animals eat food." << endl;
-        }
-      };
+         void eat() {
+             cout << "Animals eat food." << endl;
+         }
+     };
 
-     class Mammal : virtual public Animal
-      {
-      public:
-       void walk()
-       {
-        cout << "Mammals walk on land." << endl;
-       }
-};
+     class Mammal : virtual public Animal {
+     public:
+         void walk() {
+             cout << "Mammals walk on land." << endl;
+         }
+     };
 
-      class Bird : virtual public Animal
-      {
-      public:
-          void fly()
-          {
-              cout << "Birds fly in the sky." << endl;
-          }
-      };
-      
-      class Bat : public Mammal, public Bird
-      {
-      public:
-          void hangUpsideDown()
-          {
-              cout << "The bat hangs upside down." << endl;
-          }
-      };
-      
-      int main()
-      {
-          Bat b;
-          b.eat(); // No ambiguity due to virtual inheritance
-          b.walk();
-          b.fly();
-          b.hangUpsideDown();
-          return 0;
-      }
+     class Bird : virtual public Animal {
+     public:
+         void fly() {
+             cout << "Birds fly in the sky." << endl;
+         }
+     };
 
+     class Bat : public Mammal, public Bird {
+     public:
+         void hangUpsideDown() {
+             cout << "The bat hangs upside down." << endl;
+         }
+     };
+
+     int main() {
+         Bat b;
+         b.eat(); // No ambiguity due to virtual inheritance
+         b.walk();
+         b.fly();
+         b.hangUpsideDown();
+         return 0;
+     }
      ```
+
 
 ---
 
